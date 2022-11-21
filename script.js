@@ -1,5 +1,5 @@
-const resultsNav = document.getElementById('resultNav');
-const favouritesNav = document.getElementById('gavouritesNav');
+const resultsNav = document.getElementById('resultsNav');
+const favouritesNav = document.getElementById('favouritesNav');
 const imagesContainer = document.querySelector('.images-container');
 const saveConfirmed = document.querySelector('.save-confirmed');
 const loader = document.querySelector('.loader');
@@ -13,6 +13,7 @@ let resultsArray = [];
 
 function updateDOM() {
   resultsArray.forEach((result) => {
+    // console.log(result);
     // Card Container
     const card = document.createElement('div');
     card.classList.add('card');
@@ -24,7 +25,7 @@ function updateDOM() {
     // image
     const image = document.createElement('img');
     image.src = result.url;
-    image.alt = 'NADA Picture of the Day';
+    image.alt = 'NASA Picture of the Day';
     image.loading = 'lazy';
     image.classList.add('card-img-top');
     // card body
@@ -55,7 +56,7 @@ function updateDOM() {
     cardBody.append(cardTitle, saveText, cardText, footer);
     link.appendChild(image);
     card.append(link, cardBody)
-    // console.log(card);
+    console.log(card);
     imagesContainer.appendChild(card);
   });
 }
